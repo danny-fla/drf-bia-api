@@ -30,5 +30,5 @@ class RecipeSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',  'created_at',
             'updated_at', 'title', 'ingredients', 'profile_image',
-            'instructions', 'duration', 'image', 'is_owner'
+            'instructions', 'duration', 'image'
         ]
