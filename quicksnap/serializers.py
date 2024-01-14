@@ -28,6 +28,6 @@ class QuicksnapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quicksnap
         fields = [
-            'id', 'owner', 'is_owner', 'profile_id',  'created_at',
+            'id', 'owner', 'is_owner', 'profile_id', 'profile_image', 'created_at',
             'updated_at', 'title', 'content', 'image', 'city', 'location'
         ]
