@@ -21,3 +21,11 @@ class CommentSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'recipe', 'quicksnap', 'created_at', 'updated_at', 'content'
         ]
+
+class CommentDetailSerializer(CommentSerializer):
+    """
+    Serializer for the Comment model used in Detail view
+    Recipe and Quicksnaps are a read only field so that we dont have to set it on each update
+    """
+    recipe = serializers.ReadOnlyField(source='recipe.id')
+    quicksnap = serializers.ReadOnlyField(source='quicksnap.id')

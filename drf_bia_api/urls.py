@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('recipe.urls')),
     path('', include('quicksnap.urls')),
+    path('', include('comments.urls')),
 ]

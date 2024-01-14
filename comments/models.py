@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from recipe.models import Recipe
-from quicksnap import Quicksnap
+from quicksnap.models import Quicksnap
 
 
 class Comment(models.Model):
