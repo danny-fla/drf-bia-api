@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
     'profiles',
     'recipe',
+    'quicksnap',
 ]
 
 MIDDLEWARE = [
