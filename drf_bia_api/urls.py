@@ -23,6 +23,6 @@ urlpatterns = [
     path('', include('recipe.urls')),
     path('', include('quicksnap.urls')),
     path('', include('comments.urls')),
-    path('', include('likes.urls')),
+    path('', include('RecipeLike.urls')),
     path('', include('followers.urls')),
 ]

@@ -1,18 +1,17 @@
 from rest_framework import serializers
-from likes.models import Like
+from RecipeLike.models import RecipeLike
 
 
-class LikeSerializer(serializers.ModelSerializer):
+class RecipeLikeSerializer(serializers.ModelSerializer):
     """
     Serializer for the Like model
-    The create method handles the unique constraint on 'owner', 'recipe' 
-    and 'quicksnap'
+    The create method handles the unique constraint on 'owner' and 'recipe'
     """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Like
-        fields = ['id', 'created_at', 'owner', 'recipe', 'quicksnap']
+        model = RecipeLike
+        fields = ['id', 'created_at', 'owner', 'recipe']
 
     def create(self, validated_data):
         try:
