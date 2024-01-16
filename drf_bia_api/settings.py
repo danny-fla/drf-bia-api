@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'comments',
     'followers',
     'RecipeLike',
+    'QuicksnapLikes'
 ]
 
 MIDDLEWARE = [
