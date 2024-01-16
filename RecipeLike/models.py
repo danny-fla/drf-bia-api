@@ -5,13 +5,13 @@ from recipe.models import Recipe
 
 class RecipeLike(models.Model):
     """
-    Like model, related to 'owner'and 'recipe'.
+    RecipeLike model, related to 'owner'and 'recipe'.
     'owner' is a User instance, 'recipe' is a 'Recipe' instance.'unique_together' makes sure a user can't like the
-    same post twice.
+    same recipe twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     recipe = models.ForeignKey(
-        Recipe, related_name='likes', on_delete=models.CASCADE
+        Recipe, related_name='RecipeLikes', on_delete=models.CASCADE
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
