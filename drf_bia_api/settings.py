@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'rest_framework',
     'location_field.apps.DefaultConfig',
+    'django_filters',
 
     'profiles',
     'recipe',

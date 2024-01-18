@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from .models import Recipe
 from .serializers import RecipeSerializer
@@ -18,9 +19,18 @@ class RecipeList(generics.ListCreateAPIView):
         recipe_comments_count=Count('RecipeComments', distinct=True),
     ).order_by('-created_at')
     serializer_class = RecipeSerializer
+
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'owner__followed__owner__profile',
+        'RecipeLikes__owner__profile',
+        'owner__profile',
+        'RecipeComments__owner__profile',
     ]
 
     search_fields = [

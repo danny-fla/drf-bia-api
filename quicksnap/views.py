@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from .models import Quicksnap
 from .serializers import QuicksnapSerializer
@@ -18,9 +19,18 @@ class QuicksnapList(generics.ListCreateAPIView):
         quicksnap_comments_count=Count('QuicksnapComments', distinct=True),
     ).order_by('-created_at')
     serializer_class = QuicksnapSerializer
+
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'owner__followed__owner__profile',
+        'QuicksnapLikes__owner__profile',
+        'owner__profile',
+        'QuicksnapComments__owner__profile'
     ]
     
     search_fields = {
