@@ -9,6 +9,8 @@ class QuicksnapSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     quicksnap_like_id = serializers.SerializerMethodField()
+    quicksnap_likes_count = serializers.ReadOnlyField()
+    quicksnap_comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -41,5 +43,6 @@ class QuicksnapSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'created_at','updated_at', 'title', 'content', 'image',
-            'city', 'location','quicksnap_like_id'
+            'city', 'location','quicksnap_like_id', 'quicksnap_likes_count',
+            'quicksnap_comments_count'
         ]

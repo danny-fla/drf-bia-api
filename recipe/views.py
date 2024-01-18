@@ -15,7 +15,7 @@ class RecipeList(generics.ListCreateAPIView):
 
     queryset = Recipe.objects.annotate(
         recipes_likes_count=Count('RecipeLikes', distinct=True),
-        # recipe_comments_count=Count('RecipeComments', distinct=True),
+        recipe_comments_count=Count('RecipeComments', distinct=True),
     ).order_by('-created_at')
     serializer_class = RecipeSerializer
     filter_backends = [
@@ -23,6 +23,7 @@ class RecipeList(generics.ListCreateAPIView):
     ]
     ordering_fields = [
         'recipes_likes_count',
+        'recipe_comments_count'
     ]
 
     def perform_create(self, serializer):
@@ -37,7 +38,7 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Recipe.objects.annotate(
         recipes_likes_count=Count('RecipeLikes', distinct=True),
-        # recipe_comments_count=Count('RecipeComments', distinct=True),
+        recipe_comments_count=Count('RecipeComments', distinct=True),
     ).order_by('-created_at')
     serializer_class = RecipeSerializer
     filter_backends = [
@@ -45,4 +46,5 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     ]
     ordering_fields = [
         'recipes_likes_count',
+        'recipe_comments_count'
     ]
