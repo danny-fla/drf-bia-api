@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from .models import QuicksnapComment
 from .serializers import QuicksnapCommentSerializer, QuicksnapCommentDetailSerializer
@@ -11,6 +12,8 @@ class QuicksnapCommentList(generics.ListCreateAPIView):
     serializer_class = QuicksnapCommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = QuicksnapComment.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['quicksnap']
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
