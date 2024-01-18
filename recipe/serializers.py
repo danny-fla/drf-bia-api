@@ -9,6 +9,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     recipe_like_id = serializers.SerializerMethodField()
+    recipes_likes_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -41,5 +42,6 @@ class RecipeSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',  'created_at',
             'updated_at', 'title', 'ingredients', 'profile_image',
-            'instructions', 'duration', 'image', 'recipe_like_id'
+            'instructions', 'duration', 'image', 'recipe_like_id',
+            'recipes_likes_count'
         ]

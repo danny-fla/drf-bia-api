@@ -1,4 +1,5 @@
-from rest_framework import generics, permissions
+from django.db.models import Count
+from rest_framework import generics, permissions, filters
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from .models import Recipe
 from .serializers import RecipeSerializer
@@ -11,7 +12,18 @@ class RecipeList(generics.ListCreateAPIView):
     """
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Recipe.objects.all()
+
+    queryset = Recipe.objects.annotate(
+        recipes_likes_count=Count('RecipeLikes', distinct=True),
+        # recipe_comments_count=Count('RecipeComments', distinct=True),
+    ).order_by('-created_at')
+    serializer_class = RecipeSerializer
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+    ordering_fields = [
+        'recipes_likes_count',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -23,4 +35,14 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = RecipeSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Recipe.objects.all()
+    queryset = Recipe.objects.annotate(
+        recipes_likes_count=Count('RecipeLikes', distinct=True),
+        # recipe_comments_count=Count('RecipeComments', distinct=True),
+    ).order_by('-created_at')
+    serializer_class = RecipeSerializer
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+    ordering_fields = [
+        'recipes_likes_count',
+    ]
