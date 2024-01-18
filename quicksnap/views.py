@@ -19,8 +19,15 @@ class QuicksnapList(generics.ListCreateAPIView):
     ).order_by('-created_at')
     serializer_class = QuicksnapSerializer
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        filters.SearchFilter,
     ]
+    
+    search_fields = {
+        'owner__username',
+        'title',
+    }
+
     ordering_fields = [
         'quicksnap_likes_count',
         'quicksnap_comments_count'
