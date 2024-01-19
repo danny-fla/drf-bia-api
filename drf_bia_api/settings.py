@@ -55,7 +55,7 @@ LOCATION_FIELD = {
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['8000-dannyfla-drfbiaapi-m3o6a01dvio.ws-eu107.gitpod.io', 'https://drf-bia-api-8cf791bcdd63.herokuapp.com']
 
