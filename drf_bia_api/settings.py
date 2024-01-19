@@ -19,10 +19,8 @@ if os.path.exists('env.py'):
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL'),
-    'CLOUD_NAME': 'dsi5hhbty',
-    'API_KEY': '672459777355812',
-    'API_SECRET': 'ldkrGRKBrSZQ2OfJ2EOZ01zv7SM',
 }
+
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,7 +45,7 @@ JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 
 LOCATION_FIELD = {
     'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
-    'provider.google.api_key': 'AIzaSyDcK0Ue5efK5BlhGWOb4BFYcTWmJQNIQpU',
+    'provider.google.api_key': os.environ.get('LOCATION_FIELD_GOOGLE_API_KEY'),
     'provider.google.api_libraries': '',
     'provider.google.map.type': 'ROADMAP',
 }
