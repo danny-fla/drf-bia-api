@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import re
 
 
 if os.path.exists('env.py'):
@@ -65,7 +66,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-dannyfla-drfbiaapi-m3o6a01dvio.ws-eu107.gitpod.io', 'drf-bia-api-8cf791bcdd63.herokuapp.com']
+ALLOWED_HOSTS = ['8000-dannyfla-drfbiaapi-m3o6a01dvio.ws-eu107.gitpod.io', os.environ.get('ALLOWED_HOST')]
 
 
 # Application definition
@@ -113,14 +114,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if 'CLIENT_ORIGIN' in os.environ:
-     CORS_ALLOWED_ORIGINS = [
-         os.environ.get('CLIENT_ORIGIN')
-     ]
-else:
-     CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https://.*\.gitpod\.io$",
-     ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-',
+    os.environ.get('CLIENT_ORIGIN_DEV', ''),
+    re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 
