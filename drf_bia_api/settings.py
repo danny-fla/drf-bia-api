@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     'RecipeComments',
     'QuicksnapComments',
     'contacts',
+    'chefs',
 ]
 
 SITE_ID = 1
