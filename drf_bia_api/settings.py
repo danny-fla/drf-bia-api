@@ -99,7 +99,8 @@ INSTALLED_APPS = [
     'RecipeLike',
     'QuicksnapLikes',
     'RecipeComments',
-    'QuicksnapComments'
+    'QuicksnapComments',
+    'contacts',
 ]
 
 SITE_ID = 1
