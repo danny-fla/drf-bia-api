@@ -28,6 +28,6 @@ class ChefSerializer(serializers.ModelSerializer):
         model = Chef
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-            'profile_image', 'cuisine_speciality', 'experience', 'location',
+            'profile_image', 'is_available', 'experience', 'location',
             'email', 'phone', 'created_at', 'updated_at', 'CHEF_TYPE_CHOICES'
         ]

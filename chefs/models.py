@@ -11,7 +11,7 @@ class Chef(models.Model):
         ('home_cook', 'Home Cooking Enthusiast'),
     ]
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
-    cuisine_speciality = models.CharField(max_length=255)
+    is_available = models.BooleanField(default=True)
     experience = models.IntegerField()
     location = models.CharField(max_length=255, blank=True)
     email = models.EmailField(null=True, blank=True)
