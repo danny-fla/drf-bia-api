@@ -19,7 +19,7 @@ class ChefList(generics.ListCreateAPIView):
 
     search_fields = [
         'owner__username',
-        'speciality',
+        'cuisnie_speciality',
         'location'
     ]
 
