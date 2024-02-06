@@ -33,4 +33,6 @@ class ChefDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ChefSerializer
-    queryset = Chef.objects.all().order_by('-created_at')
+    queryset = Chef.objects.annotate(
+        reviews_count=Count('reviews', distinct=True)
+    ).order_by('-created_at')
