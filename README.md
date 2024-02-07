@@ -226,11 +226,19 @@ A permissions class named IsOwnerOrReadOnly was implemented to restrict editing 
 ## Technologies
 
 * Django
-  * Framework
-* 
-  * 
-* 
-  * 
-*  
-  * 
+  * Framework used to create application
+* Django REST Framework
+  * Framework used for creating the API
+* Cloudinary
+  * Used to host static images
+*  Heroku
+  * Used to host the application
+* Git
+  * Used for verion control
+* Github
+  * Repository used for storing code and docs
 
+<br>
+<hr>
+
+## Python Packages
