@@ -212,6 +212,25 @@ Methods:
 * PUT - Used to update a single profile
 * DELETE - Used to delete a profile
 
+<br>
+<hr>
 
+## Database Design
 
+(insert database diagram)
+
+## Security
+
+A permissions class named IsOwnerOrReadOnly was implemented to restrict editing or deletion of content to its creator, ensuring that only users who create the content have the privilege to modify or remove it.
+
+## Technologies
+
+* Django
+  * Framework
+* 
+  * 
+* 
+  * 
+*  
+  * 
 
