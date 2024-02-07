@@ -71,3 +71,147 @@ This Epic covers the creation of API endpoints and database connections related 
 <hr>
 
 ## User Stories
+
+### Epics
+
+#### Setup
+
+- As a developer, I need to establish the foundational project setup to facilitate further development.
+
+#### User Authenication
+
+- As a user, I want to register for a new account to gain access to all available features
+
+#### Chefs
+
+- As a developer, I aim to implement API views for chefs to ensure their data is accessible from the frontend.
+
+#### Contact
+
+- As a developer, I want to create a contact model and corresponding API view to enable users to reach out to the site owner with any issues or concerns.
+
+#### Recipes
+
+- As a user, I want the capability to view, edit, or delete recipes.
+- As a user, I want the ability to create recipes and view a list of existing posts.
+
+#### Profiles
+
+- As a developer, I aim to automatically generate a new profile with a default image for each user upon registration.
+- As a user, I want the ability to access a list of profiles registered on the platform.
+
+
+## API Endpoints
+
+User Story:
+
+`As a developer, I need to establish the foundational project setup to facilitate further development.`
+
+Implementation:
+
+The foundational project was created along with a virtual environment including all neccessary packages which were then frozen into the requirements.
+
+Secret variables were modified to hide any sensitive information and set dev and production environments apart.
+
+User Story:
+
+`As a user, I want to register for a new account to gain access to all available features`
+
+Implementation:
+
+Django Rest Framework and dj_rest_auth were installed and integrated into the project's URL patterns and site packages to leverage their built-in authentication system.
+
+User Story:
+
+`As a developer, I aim to implement API views for chefs to ensure their data is accessible from the frontend.`
+
+Implementation:
+
+Endpoint: /chefs/
+
+Methods:
+
+* POST - Used to create a chef
+* GET - Used to retrieve a list of chefs
+
+Endpoint: /chefs/int:pk/
+
+Methods:
+
+* GET - Used to view a single chef's profile
+* PUT - Used to update a chefs's profile
+* DELETE - Used to delete a chef's profile
+
+User Story:
+
+` As a developer, I want to create a contact model and corresponding API view to enable users to reach out to the site owner with any issues or concerns.`
+
+Implementation:
+
+Endpoint: /contacts/
+
+Methods:
+
+* POST - Used to create contact request
+* GET - Used to get a list of contact requests
+
+Endpoint: /contacts/int:pk/
+
+Methods:
+
+* GET - Get a single contact request
+* PUT - Used to update a single contact request
+* DELETE - Used to delete a contact request
+
+User Story:
+
+`As a user, I want the capability to view, edit, or delete recipes.`
+`As a user, I want the ability to create recipes and view a list of existing posts.`
+
+Implementation:
+
+Endpoint: /recipes/
+
+Methods:
+
+* POST - Used to create recipe
+* GET - Used to get a list of recipes
+
+Endpoint: /recipes/int:pk/
+
+Methods:
+
+* GET - Get a single receipe
+* PUT - Used to update a single recipe
+* DELETE - Used to delete a recipe
+
+User Story:
+
+`As a developer, I aim to automatically generate a new profile with a default image for each user upon registration.`
+
+A signal was implemented within the profiles app to automatically generate a new user profile upon registration.
+
+User Story:
+
+`As a user, I want the ability to access a list of profiles registered on the platform.`
+
+Implentation:
+
+Endpoint: /profiles/
+
+Methods:
+
+* POST - Used to create a profile
+* GET - Used to get a list of profiles
+
+Endpoint: /profiles/int:pk/
+
+Methods:
+
+* GET - Get a single profile
+* PUT - Used to update a single profile
+* DELETE - Used to delete a profile
+
+
+
+
