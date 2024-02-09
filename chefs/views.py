@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Avg
 from rest_framework import generics, permissions, filters
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from .models import Chef
@@ -13,7 +13,8 @@ class ChefList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
     queryset = Chef.objects.annotate(
-        reviews_count=Count('reviews', distinct=True)
+        reviews_count=Count('reviews', distinct=True),
+        average_rating=Avg('reviews__rating')
     ).order_by('-created_at')
 
     filter_backends = [
@@ -37,7 +38,8 @@ class ChefDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ChefSerializer
     queryset = Chef.objects.annotate(
-        reviews_count=Count('reviews', distinct=True)
+        reviews_count=Count('reviews', distinct=True),
+        average_rating=Avg('reviews__rating')
     ).order_by('-created_at')
 
     ordering_fields = [

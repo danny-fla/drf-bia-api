@@ -12,6 +12,7 @@ class ChefSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     reviews_count = serializers.ReadOnlyField()
+    average_rating = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         """
@@ -31,5 +32,5 @@ class ChefSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'profile_image', 'is_available', 'experience', 'location',
             'email', 'phone', 'created_at', 'updated_at', 'CHEF_TYPE_CHOICES',
-            'reviews_count'
+            'reviews_count', 'average_rating',
         ]
