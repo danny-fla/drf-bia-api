@@ -16,7 +16,6 @@ Bia API is the backend server used by the Bia frontend application (inset link)
 * [Deployment](#Deployment)
     * [Version Control](#Version-Control)
     * [Heroku Deployment](#Heroku-Deployment)
-    * [GCP](#Google-Cloud-Platform)
     * [Run Locally](#Run-Locally)
     * [Fork Project](#Fork-Project)
 * [Credits](#Credits)
@@ -217,7 +216,7 @@ Methods:
 
 ## Database Design
 
-(insert database diagram)
+![Database](./readme/database.png)
 
 ## Security
 
@@ -245,9 +244,27 @@ A permissions class named IsOwnerOrReadOnly was implemented to restrict editing 
 
 ## Testing
 
+**Validator Results**
+
+All files within their folders were validated using Code Institute's code validator [CI Python Linter](https://pep8ci.herokuapp.com/#)
+
+Several common issues presented and were dealt with appropriately such as "blank line contains whitespaces", "no new line at the end of file", etc.
+
+![Validator Example Issues Reported](./readme/validator-issues.png)
+
+![Validator Issues Resolved](./readme/validator-clear.png)
+
 ## Deployment
 
 ### Version Control
+
+`git add <file>` This command stages changes in the specified file(s) to the staging area, preparing them to be committed.
+
+`git commit -m "commit message"` This command creates a commit with the changes staged in the staging area. The -m flag allows you to specify a commit message describing the changes.
+
+`git push` This command sends the committed changes from the local repository to the remote repository updating the remote repository with the latest changes.
+
+### Heroku Deployment
 
 The Bia API is deployed to Heroku, using an ElephantSQL Postgres database. To duplicate deployment to Heroku, follow these steps:
 
@@ -283,3 +300,44 @@ The Bia API is deployed to Heroku, using an ElephantSQL Postgres database. To du
 - Optionally choose the main branch under 'Automatic Deploys' and select 'Enable Automatic Deploys' if you wish your deployed API to be automatically redeployed every time you push changes to GitHub.
 - Find the 'Manual Deploy' section, choose 'main' as the branch to deploy and select 'Deploy Branch'.
 - Your API will shortly be deployed and you will be given a link to the deployed site when the process is complete.
+
+#### Run locally
+
+To clone the GitHub repository for local use, follow these steps:
+
+- Navigate to the GitHub Repository you want to clone.
+- Click on the "Code" drop-down button.
+- Select "HTTPS" from the options.
+- Copy the repository link to the clipboard.
+- Open your preferred IDE (ensure Git is installed for the next steps).
+- In the IDE terminal, type git clone <copied-git-url>.
+- Press Enter to execute the command.
+
+The project will now be cloned onto your local machine for use.
+To run the project, you'll need to create an env.py file and add the configuration variables as used in the Heroku steps mentioned above.
+
+**Virtual Environment Setup**
+
+Windows:
+
+`python -m venv venv`
+`venv/Scripts/activate`
+`pip install -r requirements.txt`
+
+Mac:
+
+`python -m venv venv`
+`source venv/bin/activate`
+`pip install -r requirements.txt`
+
+#### Forking
+
+Forks are typically utilized for either suggesting modifications to another person's project or for employing someone else's project as a foundation for your own concept.
+
+Here's how to fork a GitHub Repository:
+
+- Navigate to the GitHub Repository you wish to fork.
+- At the top right of the page, beneath the header, locate and click the "fork" button.
+- This action will generate a duplicate of the entire project within your GitHub Repository.
+
+## Credits
