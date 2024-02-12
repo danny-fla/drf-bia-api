@@ -6,7 +6,6 @@ class ChefSerializer(serializers.ModelSerializer):
     """
     Chef serializer to add the owners profile image.
     """
-    
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')

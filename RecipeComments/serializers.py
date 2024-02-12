@@ -22,6 +22,7 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
             'recipe', 'created_at', 'updated_at', 'content'
         ]
 
+
 class RecipeCommentDetailSerializer(RecipeCommentSerializer):
     """
     Serializer for the RecipeComment model used in Detail view

@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from quicksnap.models import Quicksnap
 
 
-
 class QuicksnapComment(models.Model):
     """
     RecipeComment model, related to User and Quicksnap

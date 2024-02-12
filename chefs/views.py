@@ -11,7 +11,7 @@ class ChefList(generics.ListCreateAPIView):
     """
     serializer_class = ChefSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    
+
     queryset = Chef.objects.annotate(
         reviews_count=Count('reviews', distinct=True),
         average_rating=Avg('reviews__rating')

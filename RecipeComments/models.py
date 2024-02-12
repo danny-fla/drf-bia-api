@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from recipe.models import Recipe
 
 
-
 class RecipeComment(models.Model):
     """
     RecipeComment model, related to User and Recipe

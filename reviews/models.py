@@ -6,7 +6,8 @@ from chefs.models import Chef
 class Review(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     chef = models.ForeignKey(
-        Chef, on_delete=models.CASCADE, related_name='reviews', blank=True, null=True
+        Chef, on_delete=models.CASCADE, related_name='reviews',
+        blank=True, null=True
     )
     content = models.TextField()
     rating = models.IntegerField(blank=True, null=True)

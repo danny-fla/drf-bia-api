@@ -36,7 +36,9 @@ class RecipeDetailViewTests(APITestCase):
             owner=adam, title='a title', ingredients='adams ingredients'
         )
         Recipe.objects.create(
-            owner=brian, title='another title', instructions='brians instructions'
+            owner=brian,
+            title='another title',
+            instructions='brians instructions'
         )
 
     def test_can_retrieve_recipe_using_valid_id(self):

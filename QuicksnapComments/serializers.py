@@ -22,9 +22,11 @@ class QuicksnapCommentSerializer(serializers.ModelSerializer):
             'quicksnap', 'created_at', 'updated_at', 'content'
         ]
 
+
 class QuicksnapCommentDetailSerializer(QuicksnapCommentSerializer):
     """
     Serializer for the QuicksnapComment model used in Detail view
-    Quicksnap is a read only field so that we dont have to set it on each update
+    Quicksnap is a read only field so that we dont have to set it
+    on each update
     """
     quicksnap = serializers.ReadOnlyField(source='quicksnap.id')

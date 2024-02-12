@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Recipe(models.Model):
     """
     Recipe model, related to 'owner', i.e. a User instance.

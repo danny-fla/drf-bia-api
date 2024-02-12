@@ -5,6 +5,7 @@ from drf_bia_api.permissions import IsOwnerOrReadOnly
 from RecipeLike.models import RecipeLike
 from RecipeLike.serializers import RecipeLikeSerializer
 
+
 class RecipeLikeList(generics.ListCreateAPIView):
     """
     List likes or create a like if logged in.
@@ -16,6 +17,7 @@ class RecipeLikeList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class RecipeLikeDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a like or delete it by id if you own it.
@@ -23,4 +25,3 @@ class RecipeLikeDetail(generics.RetrieveDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = RecipeLikeSerializer
     queryset = RecipeLike.objects.all()
-

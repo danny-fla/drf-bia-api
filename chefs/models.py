@@ -6,10 +6,6 @@ class Chef(models.Model):
     """
     Chef model, related to User
     """
-    CHEF_TYPE_CHOICES = [
-        ('professional', 'Professional Chef'),
-        ('home_cook', 'Home Cooking Enthusiast'),
-    ]
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     is_available = models.BooleanField(default=True)
     experience = models.IntegerField()
