@@ -94,12 +94,9 @@ INSTALLED_APPS = [
 
     'profiles',
     'recipe',
-    'quicksnap',
     'followers',
     'RecipeLike',
-    'QuicksnapLikes',
     'RecipeComments',
-    'QuicksnapComments',
     'contacts',
     'chefs',
     'reviews',

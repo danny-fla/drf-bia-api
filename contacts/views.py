@@ -13,7 +13,10 @@ class ContactList(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        if self.request.user.is_authenticated:
+            serializer.save(owner=self.request.user)
+        else:
+            serializer.save()
 
 
 class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
