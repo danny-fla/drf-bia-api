@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from RecipeLike.models import RecipeLike
+from django.db import IntegrityError
 
 
 class RecipeLikeSerializer(serializers.ModelSerializer):
