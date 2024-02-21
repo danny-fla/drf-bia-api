@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+RECIPE_CATEGORIES = (
+    ("Breakfast", "Breakfast"),
+    ("Snack", "Snack"),
+    ("Lunch", "Lunch"),
+    ("Dinner", "Dinner"),
+)
 
 class Recipe(models.Model):
     """
@@ -16,6 +22,9 @@ class Recipe(models.Model):
     duration = models.DurationField(blank=True, null=True)
     image = models.ImageField(
         upload_to='images/', default='../default_post_ynchgw', blank=True
+    )
+    category = models.CharField(
+        max_length=50, choices=RECIPE_CATEGORIES, default='Dinner'
     )
 
     class Meta:

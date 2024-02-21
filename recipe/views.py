@@ -30,6 +30,7 @@ class RecipeList(generics.ListCreateAPIView):
         'owner__followed__owner__profile',
         'RecipeLikes__owner__profile',
         'owner__profile',
+        'category',
         'RecipeComments__owner__profile',
     ]
 
