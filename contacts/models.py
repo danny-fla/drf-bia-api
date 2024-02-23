@@ -6,7 +6,9 @@ class Contact(models.Model):
     """
     Comment model, related to User
     """
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    owner = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True
+        )
     reason = models.CharField(max_length=50)
     content = models.TextField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)

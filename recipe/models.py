@@ -8,6 +8,7 @@ RECIPE_CATEGORIES = (
     ("Dinner", "Dinner"),
 )
 
+
 class Recipe(models.Model):
     """
     Recipe model, related to 'owner', i.e. a User instance.

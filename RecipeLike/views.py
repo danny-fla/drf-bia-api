@@ -1,6 +1,4 @@
 from rest_framework import generics, permissions
-from rest_framework.response import Response
-from rest_framework import status
 from drf_bia_api.permissions import IsOwnerOrReadOnly
 from RecipeLike.models import RecipeLike
 from RecipeLike.serializers import RecipeLikeSerializer
