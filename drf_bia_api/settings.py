@@ -67,7 +67,8 @@ LOCATION_FIELD = {
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
+# DEBUG = True
 
 ALLOWED_HOSTS = ['8000-dannyfla-drfbiaapi-9ww4zqznt8f.ws-eu108.gitpod.io', os.environ.get('ALLOWED_HOST')]
 

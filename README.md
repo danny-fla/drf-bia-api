@@ -1,5 +1,5 @@
 # Bia API
-Bia API is the backend server used by the Bia frontend application (inset link)
+Bia API is the backend server used by the Bia frontend application [Bia - FrontEnd](https://bia-code-institute-00aa55848eed.herokuapp.com/)
 
 
 ## Table of Contents
@@ -36,7 +36,6 @@ All user stories were categorized into epics and prioritized with labels such as
 
 The project utilized a Kanban board created on GitHub Projects, accessible here(link). For more detailed information on project cards, the Kanban board can be referenced. All stories, excluding documentation tasks, were equipped with a comprehensive set of acceptance criteria, serving as benchmarks to determine the completion status of each story.
 
-(INSERT IMAGE OF KANPAN)
 
 <br>
 
