@@ -244,15 +244,33 @@ A permissions class named IsOwnerOrReadOnly was implemented to restrict editing 
 
 ## Testing
 
+Local testing of the APIs was conducted during development, while comprehensive testing was performed as an integral part of the front-end repositories. Manual testing involved interaction with the real APIs through form inputs and page loads. 
+
+The test outcomes are documented in frontend ReadMe: [Bia](https://github.com/danny-fla/bia)
+
 **Validator Results**
 
-All files within their folders were validated using Code Institute's code validator [CI Python Linter](https://pep8ci.herokuapp.com/#)
+All folders underwent flake8 testing, revealing several issues such as lines being too long, excessive blank spaces, incorrect indentation, and missing docstrings.
 
-Several common issues presented and were dealt with appropriately such as "blank line contains whitespaces", "no new line at the end of file", etc.
+All identified issues were addressed, except for the lines being too long in migration files (as these are auto-generated and not easily modified) and the auth validator lines in settings.py, which appear unbreakable due to being framework code.
 
-![Validator Example Issues Reported](./readme/validator-issues.png)
+A warning about env.py being imported but unused was disregarded, as it is utilized in the development version despite not being utilized elsewhere.
 
-![Validator Issues Resolved](./readme/validator-clear.png)
+[Chefs](./readme/flake8-chefs.png)
+
+[Contacts](./readme/flake8-contacts.png)
+
+[Comments](./readme/flake8-comments.png)
+
+[Followers](./readme/flake8-followers.png)
+
+[Profiles](./readme/flake8-profiles.png)
+
+[Recipe](./readme/flake8-recipe.png)
+
+[Likes](./readme/flake8-like.png)
+
+[Reviews](./readme/flake8-reviews.png)
 
 ## Deployment
 
@@ -341,3 +359,6 @@ Here's how to fork a GitHub Repository:
 - This action will generate a duplicate of the entire project within your GitHub Repository.
 
 ## Credits
+- The fix for the Django Rest Framework bug that prevents user's cookies from being cleared on logout is from the Code Institute Django Rest Framework walkthrough project
+- The technique to limit the size of image uploads to cloudinary is adapted from this [Cloudinary](https://support.cloudinary.com/hc/en-us/community/posts/360009752479-How-to-resize-before-uploading-pictures-in-Django) support article 
+- I learned how to implement a rating system into my reviews app by watching a [tutorial](https://www.youtube.com/watch?v=D3iPIoTL9sk) video on YouTube.
