@@ -34,7 +34,7 @@ This project followed agile methodologies, delivering small features in incremen
 
 All user stories were categorized into epics and prioritized with labels such as "Must have," "Should have," and "Could have." The stories were then assigned to specific sprints. The development prioritized "Must have" stories initially, followed by "Should haves," and finally, "Could haves." This sequential approach ensured the completion of essential requirements first, providing a comprehensive project foundation. Additional, desirable features were added based on available capacity.
 
-The project utilized a Kanban board created on GitHub Projects, accessible here(link). For more detailed information on project cards, the Kanban board can be referenced. All stories, excluding documentation tasks, were equipped with a comprehensive set of acceptance criteria, serving as benchmarks to determine the completion status of each story.
+For more detailed information on project cards, the Kanban board can be referenced. All stories, excluding documentation tasks, were equipped with a comprehensive set of acceptance criteria, serving as benchmarks to determine the completion status of each story.
 
 
 <br>
