@@ -1,5 +1,9 @@
 # Bia API
-Bia API is the backend server used by the Bia frontend application [Bia - FrontEnd](https://bia-code-institute-00aa55848eed.herokuapp.com/)
+Bia API is the backend server used by the Bia frontend application 
+
+[Bia - FrontEnd](https://bia-code-institute-00aa55848eed.herokuapp.com/)
+
+[Bia - Backend](https://drf-bia-api-8cf791bcdd63.herokuapp.com/)
 
 
 ## Table of Contents
